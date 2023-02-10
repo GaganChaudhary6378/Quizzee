@@ -14,6 +14,9 @@ export default function Questions(props) {
         <div>
             <h3 className="question-el">{props.q}</h3>
             <div className="option-el">{answerElements}</div>
+            <br></br>
+            <hr className="pagebr-el"></hr>
+
         </div>
   );
 }
