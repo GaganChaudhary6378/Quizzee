@@ -1,6 +1,7 @@
 import React from "react";
 import Start from "./Start";
 import Questions from "./Questions";
+import Check from "./Check";
 import { nanoid } from "../nanoid/index.browser";
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
           <img className="img1" src="blobs.png" />
           <div className="question-container">{questionElement}</div>
           <img className="img2" src="blob5.png" />
+          <Check/>
         </div>
       ) : (
         <Start startFunc={() => startKaro} />
