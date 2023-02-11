@@ -79,7 +79,7 @@ export default function App() {
         return question.id === id ? {...question, selected: answer} : question
       }))
   }
-  console.log(ques)
+//   console.log(ques)
   return (
     <main>
       {start ? (
