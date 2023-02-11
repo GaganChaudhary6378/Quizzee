@@ -1,6 +1,7 @@
 import React from "react";
 import Start from "./Start";
 import Questions from "./Questions";
+import Confetti from "react-confetti";
 import { nanoid } from "../nanoid/index.browser";
 
 export default function App() {
@@ -82,6 +83,7 @@ export default function App() {
 //   console.log(ques)
   return (
     <main>
+        {isHeld && <Confetti/>}
       {start ? (
         <div>
           <img className="img1" src="blobs.png" />
