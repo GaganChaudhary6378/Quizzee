@@ -3,10 +3,9 @@ import App from "./App";
 import { nanoid } from "../nanoid/index.browser";
 
 export default function Questions(props) {
+    let count=0;
   const [finalArr, setNewArr] = React.useState([]);
-  const styles = {
-    backgroundColor: props.isHeld ? "#59E391" : "white",
-  };
+
   React.useEffect(() => {
     let answers = props.options[0];
     answers.push(props.options[1]);
@@ -15,27 +14,22 @@ export default function Questions(props) {
       newArr.push({ value: items });
     });
     setNewArr(newArr);
-  },[]);
+  },[count]);
 
   const answerElements = finalArr.map((items) => {
-    let id = null;
+    let id = null;  
     if (props.q.isHeld) {
       if (props.q.correct === items) {
         id = "correct";
-      } else if (props.q.selected === items) {
-        id = "incorrect";
       } else {
-        id = "not-selected";
+        id = "incorrect";
       }
     }
     return (
       <button
         key={nanoid()}
         id={id}
-        className={items === props.q.selected ? "answer-chosen" : "btn-el"}
-        onClick={() => handleClick(items)}
-      >
-        {items.value}
+        className={items === props.q.selected ? 'answer selected' : 'answer'} onClick={() => handleClick(items)}>{items.value}
       </button>
     );
   });
