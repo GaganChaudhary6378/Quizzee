@@ -6,6 +6,13 @@ export default function Questions(props) {
     let count=0;
   const [finalArr, setNewArr] = React.useState([]);
 
+  function handleClick(item) {
+    if (props.q.checked) {
+      return;
+    }
+    props.isHold(props.id, item);
+  }
+
   React.useEffect(() => {
     let answers = props.options[0];
     answers.push(props.options[1]);
@@ -19,7 +26,7 @@ export default function Questions(props) {
   const answerElements = finalArr.map((items) => {
     let id = null;  
     if (props.q.isHeld) {
-      if (props.q.correct === items) {
+      if (props.q.correct === items.value) {
         id = "correct";
       } else {
         id = "incorrect";
@@ -33,12 +40,6 @@ export default function Questions(props) {
       </button>
     );
   });
-  function handleClick(item) {
-    if (props.q.checked) {
-      return;
-    }
-    props.isHold(props.id, item);
-  }
 
 //   console.log(newArr);
   return (
