@@ -127,3 +127,16 @@ margin-top: 2%;
   color: yellow;
   cursor: pointer;
 }
+.answer-chosen{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 12px;
+/* identical to box height */
+
+text-align: center;
+
+background: #94D7A2;
+border-radius: 7.94239px;
+}
